@@ -86,7 +86,7 @@ class EasyRSA(object):
 		stdout, stderr = p.communicate()
 		retcode = p.poll()
 		if retcode:
-			app.logger.error("openssl returned error: %s" % stderr)
+			app.logger.error("openssl returned error: %s %s" % (stderr, stdout))
 			raise CalledProcessError(retcode, args, output=stderr)
 		return stdout
 	
